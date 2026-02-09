@@ -6,8 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    Holaaaa!!! {{ titulo }}
-    <p>{{ descripcion }}</p>
-    <a href="/notas">Ir a Notas</a>
+    <h1>Clientes</h1>
+    <ul>
+        {% for x in clientes %}
+            <li>{{ x.nombre }} {{ x.apellido}}</li>
+        {% endfor %}
+    </ul>
+    
 </body>
 </html>

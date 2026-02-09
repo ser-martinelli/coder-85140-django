@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from . import models
 
 def index(request):
     datos = {
@@ -10,3 +11,7 @@ def index(request):
 def notas(request):
     mis_notas = [10, 7, 6, 3, 8, 4]
     return render(request, "prueba/notas.html", {"notas": mis_notas})
+
+def clientes_listar(request):
+    clientes = models.Cliente.objects.all()
+    return render(render, "prueba/clientes.html", context={"clientes": clientes})

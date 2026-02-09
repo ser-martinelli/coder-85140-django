@@ -1,3 +1,11 @@
 from django.db import models
 
-# Create your models here.
+class Pais(models.Model):
+    nombre = models.CharField(max_length=100, unique=True)
+
+class Cliente(models.Model):
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    pais_origen = models.ForeignKey(Pais, on_delete=models.SET_NULL, null=True, blank=True)
+
+
